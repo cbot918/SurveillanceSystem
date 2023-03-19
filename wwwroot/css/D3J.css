@@ -1,0 +1,221 @@
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
+
+
+body,html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #FAF9F7;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap{
+  width: 100%;
+  height:100%;
+  display: flex;
+  flex-direction: row;
+  background-image: linear-gradient(to bottom left, #060708, #131A22);
+}
+
+.right-side, .left-side{
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  /* margin: 0 auto; 水平置中 */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/*D3J*/
+
+.counties {
+  fill:#33474e;
+}
+.counties :hover {
+  fill: #7f9ca7;
+  transition: 0.5s;
+}
+.county-borders {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 0.5px;
+}
+
+path {
+    stroke: white;
+    fill: transparent;
+    transition: 0.5s;
+    cursor: pointer;
+}
+path:hover {
+    transform: translate(-5px, -5px);
+    
+}
+
+.CountryName{
+  border-style: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: #FFF;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+
+h1 {
+  top: 40%; left: 10%;
+  display: inline-block;
+  
+  padding: 10px 15px;
+  
+  color: hsla(0,0%,100%,.7);
+  text-transform: uppercase;
+  text-shadow: 0 0 8px hsla(0,0%,100%,.6);
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 1.8em;
+  font-weight: normal;
+  
+  background-image:
+    radial-gradient(
+      40% 30%,
+      white,
+      transparent
+      ),
+    radial-gradient(
+      100% 8%,
+      hsla(0,0%,100%,.6),
+      transparent
+      ),
+   linear-gradient(
+      transparent,
+      hsla(0,0%,0%,.5)
+      );
+  background-repeat: no-repeat;
+  
+  opacity: 0;
+  
+  animation: enter 3s ease-in;
+  animation-fill-mode: forwards;
+  }
+h1:before, h1:after {
+  position: absolute;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  }
+h1:after {
+  height: 50px;
+  width: 100%;
+  top: 50%; left: 0;
+  
+  background-image:
+    radial-gradient(
+      hsla(0,0%,100%,.6),
+      transparent 70%
+      );
+  }
+h1:before {
+  height: 100%;
+  width: 200%;
+  top: 10%; left: -50%;
+  
+  background-image:
+    radial-gradient(
+      circle,
+      hsla(0,0%,100%,.6),
+      hsla(0,0%,100%,.7) 35%,
+      transparent 55%
+      ),
+    radial-gradient(
+      circle,
+      hsla(0,0%,100%,.6),
+      hsla(0,0%,100%,.7) 40%,
+      transparent 70%
+      ),
+    radial-gradient(
+      circle,
+      hsla(0,0%,100%,.6),
+      hsla(0,0%,100%,.7) 35%,
+      transparent 65%
+      ),
+    radial-gradient(
+      circle,
+      hsla(0,0%,100%,.6),
+      hsla(0,0%,100%,.7) 5%,
+      transparent 35%
+      ),
+    radial-gradient(
+      circle,
+      hsla(0,0%,100%,.6),
+      hsla(0,0%,100%,.7) 15%,
+      transparent 35%
+      );
+  background-size: 
+    40px 40px,
+    45px 45px,
+    65px 65px,
+    40px 40px,
+    40px 40px;
+  background-position: 
+    50% 50%,
+    20% 50%,
+    60% 50%,
+    80% 50%,
+    30% 50%;
+  animation: enter-2 3s;
+  animation-fill-mode: forwards;
+  }
+h1 > span {
+  font-size: .6em;
+  }
+
+@keyframes enter {
+  0% {
+    background-position:
+      -500px 0,
+      -400px 0,
+      0 0;
+    opacity: 0;
+    }
+  100% {
+    background-position:
+      600px 0,
+      800px 0,
+      0 0;
+    opacity: 1;
+    }  
+  }
+@keyframes enter-2 {
+  0% {
+    background-position: 
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%;
+    opacity: 0;
+    }
+  50% {
+    opacity: 1;
+    }
+  100% {  
+    background-position: 
+      40% 50%,
+      20% 50%,
+      60% 50%,
+      80% 50%,
+      30% 50%;
+    opacity: 0;
+    }  
+  }
